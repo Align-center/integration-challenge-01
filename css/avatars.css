@@ -1,0 +1,33 @@
+.content .avatars {
+    position: relative;
+    max-width: 260px;
+}
+
+.content .avatars img:not(:first-child) {
+    position: absolute;
+}
+
+.content .avatars img:nth-child(2) {
+    left: 7%;
+}
+.content .avatars img:nth-child(3) {
+    left: 14%;
+}
+.content .avatars img:nth-child(4) {
+    left: 21%;
+}
+.content .avatars img:nth-child(5) {
+    left: 28%;
+}
+.content .avatars img:nth-child(6) {
+    left: 35%;
+}
+.content .avatars img:nth-child(7) {
+    left: 42%;
+}
+.content .avatars img:nth-child(8) {
+    left: 49%;
+}
+.content .avatars img:nth-child(9) {
+    left: 56%;
+}

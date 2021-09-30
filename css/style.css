@@ -1,0 +1,528 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    color: #595959;
+    font-weight: 300;
+    font-size: 14px;
+    word-spacing: 1px;
+    line-height: 1.5;
+}
+
+.a11y-hidden {
+    opacity: 0;
+    max-height: 0;
+}
+
+/*
+$$\   $$\                           $$\                     
+$$ |  $$ |                          $$ |                    
+$$ |  $$ | $$$$$$\   $$$$$$\   $$$$$$$ | $$$$$$\   $$$$$$\  
+$$$$$$$$ |$$  __$$\  \____$$\ $$  __$$ |$$  __$$\ $$  __$$\ 
+$$  __$$ |$$$$$$$$ | $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ |  \__|
+$$ |  $$ |$$   ____|$$  __$$ |$$ |  $$ |$$   ____|$$ |      
+$$ |  $$ |\$$$$$$$\ \$$$$$$$ |\$$$$$$$ |\$$$$$$$\ $$ |      
+\__|  \__| \_______| \_______| \_______| \_______|\__|      */
+
+header {
+    padding: 32px 16px 8px;
+    background-color: #fbf8f3;
+}
+
+header .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;    
+}
+
+header nav {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    color: #3180f5;
+    margin: 0 auto 0 0;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+header .logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header .burger-icon {
+    cursor: pointer;
+}
+
+.cta {
+    --lightness: 53%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    width: 100%;
+    max-width: 250px;
+    background-color: hsl(203, 89%, var(--lightness));
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color ease-in-out .3s;
+}
+
+.cta:hover {
+    --lightness: 43%;
+}
+
+.cta svg {
+    margin-right: 8px;
+}
+
+header nav .cta {
+    display: none;
+}
+
+header nav ul {
+    width: 100vw;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 350px;
+    overflow: hidden;
+    transition: max-height .3s, opacity .3s;
+}
+
+header nav ul li {
+    text-align: center;
+}
+
+header nav ul li a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: #595959;
+    padding: 8px 0;
+    transition: color ease-in-out .3s;
+}
+
+header nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: .5px;
+    background-color: #bbb;
+}
+
+header nav ul li a:hover {
+    color: #000;
+}
+
+header .content {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 32px 0 0;
+}
+
+header .content .ctas {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+header .content .cta--secondary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3180f5;
+    padding: 16px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+header .content .cta--secondary:hover {
+    text-decoration: underline;
+}
+
+header .content .cta--secondary svg{
+    max-width: 15px;
+    fill: #3180f5;
+    margin-left: 8px;
+}
+
+header .content article p strong {
+    font-weight: bold;
+    color: #1f7898;
+}
+
+header .content img.tablet {
+    display: none;
+}
+
+@media (min-width:768px) {
+
+    header .logo {
+        margin: 0;
+    }
+
+    header nav {
+        justify-content: flex-end;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-flow: row;
+        width: auto;
+        margin: 0 16px 0 auto;
+    }
+
+    header nav ul li {
+        margin: 0 16px;
+    }
+
+    header nav ul li a::after {
+        display: none;
+    }
+
+    header .content img.desktop {
+        display: none;
+    }
+
+    header .content img.tablet {
+        display: initial;
+    }
+
+    header nav .cta {
+        display: flex;
+    }
+
+    .burger-icon {
+        display: none;
+    }
+
+    header .content .ctas {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width:1200px) {
+
+    header .content {
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    header .content img.desktop {
+        display: initial;
+        order: 1;
+        max-width: 400px;
+    }
+    header .content img.tablet {
+        display: none;
+    }
+
+    header .content article {
+        max-width: calc(90% - 400px);
+    }
+
+    header .content article p {
+        font-size: 18px;
+    }
+
+    header .content article h1{
+        font-size: 48px;
+    }
+}
+
+/*
+$$\      $$\           $$\           
+$$$\    $$$ |          \__|          
+$$$$\  $$$$ | $$$$$$\  $$\ $$$$$$$\  
+$$\$$\$$ $$ | \____$$\ $$ |$$  __$$\ 
+$$ \$$$  $$ | $$$$$$$ |$$ |$$ |  $$ |
+$$ |\$  /$$ |$$  __$$ |$$ |$$ |  $$ |
+$$ | \_/ $$ |\$$$$$$$ |$$ |$$ |  $$ |
+\__|     \__| \_______|\__|\__|  \__|*/
+
+section h2 {
+    font-size: 1.7em;
+    margin-top: 0;
+}
+
+.features, .customers .container, .plan {
+    padding: 64px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.features h3 {
+    margin: 0;
+}
+
+.features h3 span {
+    font-size: 30px;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.features article {
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 4px;
+    padding: 16px;
+    margin: 8px 0;
+    transition: border-color ease-in-out .3s, background-color ease-in-out .3s;
+}
+
+.features article:hover {
+    border-color: #3180f5;
+    background-color: rgba(49, 128, 245, .05);
+}
+
+.features article p {
+    margin-bottom: 0;
+}
+
+.customers {
+    background-color: #d7f5f5;
+}
+
+.customers article {
+    max-width: 75%;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 16px;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.customers-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.customers-header img {
+    margin-right: 8px;
+}
+
+.customers-header .username {
+    margin-right: auto;
+}
+
+.customers-header h4, .customers-header p {
+    margin: 0;
+}
+
+.customers-header p {
+    font-size: 12px;
+}
+
+.customers article .content {
+    font-size: 15px;
+}
+
+.customers article .infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.customers article .infos p {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.customers article .infos p svg {
+    margin-right: 4px;
+}
+
+.plan > h2 {
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.plan > p {
+    text-align: center;
+    margin: 0 0 32px;
+}
+
+.plan article {
+    border: 1px solid #fdc464;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: rgba(253, 196, 100, .05);
+}
+
+.plan article h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    color: #595959;
+}
+
+.plan .price {
+    font-size: 20px;
+    margin: 0;
+}
+
+.plan .price span {
+    color: #000;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.plan hr {
+    border: .5px solid #ccc;
+    margin: 16px 0;
+}
+
+.plan article p:not(.price) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.plan article p:not(.price) svg {
+    margin-right: 16px;
+    width: 20px;
+    height: 20px;
+}
+
+.plan article p:not(.price) span {
+    max-width: 75%;
+}
+
+@media (min-width:1200px) {
+
+    p {
+        font-size: 18px;
+    }
+
+    .features {
+        flex-flow: row wrap;
+        align-items: stretch;
+    }
+
+    .customers .container {
+        flex-flow: row wrap;
+        align-items: flex-start;
+    }
+
+    .features h2, .customers h2 {
+        width: 100%;
+    }
+
+    .features article {
+        width: calc(100% / 2 - 16px);
+        margin: 8px;
+    }
+
+    .customers article {
+        width: calc(100% / 3 - 16px);
+        margin: 0 8px;
+    }
+
+    .plan .cta {
+        max-width: 100%;
+        padding: 16px;
+    }
+}
+/*                                      
+$$$$$$$$\                   $$\                         
+$$  _____|                  $$ |                        
+$$ |    $$$$$$\   $$$$$$\ $$$$$$\    $$$$$$\   $$$$$$\  
+$$$$$\ $$  __$$\ $$  __$$\\_$$  _|  $$  __$$\ $$  __$$\ 
+$$  __|$$ /  $$ |$$ /  $$ | $$ |    $$$$$$$$ |$$ |  \__|
+$$ |   $$ |  $$ |$$ |  $$ | $$ |$$\ $$   ____|$$ |      
+$$ |   \$$$$$$  |\$$$$$$  | \$$$$  |\$$$$$$$\ $$ |      
+\__|    \______/  \______/   \____/  \_______|\__|     */ 
+
+footer {
+    background-color: #d7f5f5;
+    padding: 16px;
+}
+
+footer .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .logo {
+    font-size: 16px;
+    font-style: italic;
+    color: #3180f5;
+    cursor: pointer;
+}
+
+footer .logo a{
+    color: inherit;
+    text-decoration: none;
+}
+
+footer ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+footer li:not(:first-child, :last-child) {
+    margin: 0 8px;
+}
+
+footer li:first-child {
+    margin-right: 8px;
+}
+
+footer li:last-child {
+    margin-left: 8px;
+}
+
+footer li a {
+    text-decoration: none;
+    color: #000;
+}
+
+footer li a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width:768px) {
+    footer nav li:first-child {
+        margin-right: auto;
+    }
+}
